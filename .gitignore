@@ -1,0 +1,15 @@
+node_modules
+.next
+out
+.vercel
+.env*.local
+.env
+*.tsbuildinfo
+next-env.d.ts
+.DS_Store
+# Original brand package (used copies live in public/brand)
+ScaleVia-Brand-Assets/
+.next-verify
+
+# Local screen recordings
+*.mp4

@@ -1,0 +1,34 @@
+<!doctype html><html><head><meta charset="utf-8"><style>
+*{box-sizing:border-box;margin:0}
+body{width:1600px;height:1000px;overflow:hidden;position:relative;font-family:-apple-system,system-ui,sans-serif;
+ background:radial-gradient(1000px 700px at 50% 30%,#e7f1ea 0%,transparent 75%),linear-gradient(180deg,#dcebe1 0%,#cfe2d6 100%)}
+img{display:block;width:100%}
+.stage{position:absolute;inset:0;perspective:2400px}
+.win{position:absolute;left:170px;top:150px;width:1100px;border-radius:20px;overflow:hidden;background:#fff;transform:rotateY(14deg) rotateX(2deg);transform-origin:left center;
+ box-shadow:0 0 0 1px rgba(30,60,40,.08),-30px 50px 80px -40px rgba(30,70,45,.45)}
+.bar{height:52px;background:#f6f6f7;border-bottom:1px solid rgba(0,0,0,.07);display:flex;align-items:center;padding:0 20px;gap:9px;color:#9a9ca1}
+.bar i{width:13px;height:13px;border-radius:50%}
+.ic{width:22px;height:16px;border:2px solid #b5b7bc;border-radius:4px;margin-left:16px}
+.nav{font-size:20px;margin-left:10px;letter-spacing:10px;color:#b5b7bc}
+.url{margin:0 auto;height:30px;width:400px;border-radius:9px;background:#ececee;display:flex;align-items:center;justify-content:center;font-size:13px;color:#8a8c91;gap:6px}
+.plus{font-size:24px;color:#a7a9ae;margin-left:14px}
+.scr{aspect-ratio:1440/760;overflow:hidden}
+.scr img{height:100%;object-fit:cover;object-position:top}
+.ph{position:absolute;left:1150px;top:300px;width:270px;border-radius:44px;padding:10px;background:linear-gradient(145deg,#f1f2f4,#b8bbc1 30%,#e7e8eb 60%,#a4a7ad);
+ box-shadow:0 0 0 1px rgba(0,0,0,.15),-18px 40px 60px -26px rgba(30,70,45,.55)}
+.ph .in{border-radius:36px;background:#0c0c0d;padding:6px}
+.ph .s{position:relative;border-radius:31px;overflow:hidden;background:#fff}
+.ph .st{height:34px;background:#fff}
+.ph .isl{position:absolute;top:9px;left:50%;transform:translateX(-50%);width:84px;height:24px;border-radius:14px;background:#000;z-index:2}
+.floor{position:absolute;border-radius:50%;background:radial-gradient(closest-side,rgba(30,70,45,.32),transparent)}
+</style></head><body>
+<div class="floor" style="left:220px;top:800px;width:1080px;height:70px"></div>
+<div class="floor" style="left:1110px;top:900px;width:360px;height:44px"></div>
+<div class="stage">
+ <div class="win"><div class="bar"><i style="background:#ff5f57"></i><i style="background:#febc2e"></i><i style="background:#28c840"></i><span class="ic"></span><span class="nav">‹ ›</span>
+  <div class="url"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#8a8c91" stroke-width="3"><rect x="4" y="11" width="16" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg>correct-eg.com</div>
+  <span class="plus">+</span><span class="ic" style="width:18px;height:18px"></span></div>
+  <div class="scr"><img src="cr-d.png"></div></div>
+</div>
+<div class="ph"><div class="in"><div class="s"><div class="isl"></div><div class="st"></div><img src="cr-m.png"></div></div></div>
+</body></html>

@@ -1,0 +1,39 @@
+<!doctype html><html><head><meta charset="utf-8"><style>
+*{box-sizing:border-box;margin:0}
+body{width:1600px;height:1000px;overflow:hidden;position:relative;background:radial-gradient(900px 600px at 80% 10%,rgba(125,200,235,.28),transparent 70%),radial-gradient(900px 600px at 10% 95%,rgba(120,210,160,.22),transparent 70%),linear-gradient(180deg,#eef7f6 0%,#e2f1ee 100%)}
+img{display:block;width:100%}
+.shadow{position:absolute;left:230px;top:790px;width:1120px;height:46px;border-radius:50%;background:radial-gradient(closest-side,rgba(40,80,80,.28),transparent)}
+/* laptop */
+.lap{position:absolute;left:300px;top:150px;width:960px;transform:perspective(2600px) rotateY(-18deg);transform-origin:right bottom}
+.lid{position:relative;background:linear-gradient(#2a2a2c,#111);border-radius:26px 26px 6px 6px;padding:22px 22px 30px;box-shadow:0 0 0 2px #9fa1a6,inset 0 0 0 2px #3a3a3c}
+.cam{position:absolute;top:8px;left:50%;width:7px;height:7px;margin-left:-3px;border-radius:50%;background:#2c2f36}
+.scr{border-radius:4px;overflow:hidden;aspect-ratio:1440/860;background:#0b1626}
+.scr img{height:100%;object-fit:cover;object-position:top}
+.deck{position:relative;height:30px;margin:0 -80px;background:linear-gradient(#f1f1f3 0%,#d4d5d9 55%,#a9abb0 100%);border-radius:4px 4px 30px 30px;box-shadow:0 18px 20px -12px rgba(30,70,70,.40)}
+.deck:before{content:"";position:absolute;left:50%;top:0;width:200px;height:10px;margin-left:-100px;border-radius:0 0 12px 12px;background:linear-gradient(#bfc0c4,#d8d9dc)}
+/* phone */
+.ph{position:absolute;left:1180px;top:345px;width:250px;transform:rotate(4deg);border-radius:40px;background:linear-gradient(135deg,#fdfdfd,#e2e3e6);padding:62px 13px 70px;box-shadow:0 0 0 1.5px #c9cbd0,0 40px 60px -22px rgba(30,70,70,.50),inset 0 0 0 3px #f7f7f8}
+.ph .scr2{border-radius:3px;overflow:hidden;aspect-ratio:390/700;background:#0b1626;box-shadow:0 0 0 1px rgba(0,0,0,.25)}
+.ph .scr2 img{height:100%;object-fit:cover;object-position:top}
+.spk{position:absolute;top:30px;left:50%;width:56px;height:6px;margin-left:-28px;border-radius:4px;background:#cfd1d5}
+.ph .cam2{position:absolute;top:28px;left:68px;width:9px;height:9px;border-radius:50%;background:#b8bac0}
+.home{position:absolute;bottom:16px;left:50%;width:44px;height:44px;margin-left:-22px;border-radius:50%;box-shadow:inset 0 0 0 2px #cfd1d5}
+/* pencil cup */
+.cup{position:absolute;left:250px;top:548px;width:150px;height:240px;z-index:3}
+.cup .body{position:absolute;bottom:0;left:0;width:150px;height:190px;border-radius:10px 10px 16px 16px;
+ background:repeating-linear-gradient(90deg,#fbfbfb 0 12px,#e6e6e6 12px 14px,#f6f6f6 14px 16px);box-shadow:inset -18px 0 24px -10px rgba(0,0,0,.12),inset 14px 0 18px -10px rgba(255,255,255,.9),0 20px 26px -14px rgba(30,70,70,.40)}
+.cup .rim{position:absolute;top:44px;left:0;width:150px;height:16px;border-radius:50%;background:#e8e8e8;box-shadow:inset 0 3px 6px rgba(0,0,0,.15)}
+.p{position:absolute;bottom:150px;width:12px;border-radius:2px;transform-origin:bottom center}
+</style></head><body>
+<div class="shadow"></div>
+<div class="lap"><div class="lid"><span class="cam"></span><div class="scr"><img src="sc-lap.png"></div></div><div class="deck"></div></div>
+<div class="cup">
+ <div class="p" style="left:30px;height:150px;background:linear-gradient(90deg,#2b2b2b,#555);transform:rotate(-22deg)"></div>
+ <div class="p" style="left:52px;height:130px;width:22px;background:linear-gradient(90deg,#e9e9ea,#fff);transform:rotate(-8deg);box-shadow:inset 0 0 0 1px #cfcfcf"></div>
+ <div class="p" style="left:78px;height:120px;background:linear-gradient(90deg,#e7a63b,#f3c06a);transform:rotate(2deg)"></div>
+ <div class="p" style="left:96px;height:160px;width:20px;background:linear-gradient(90deg,#dcdcdd,#f7f7f7);transform:rotate(8deg);box-shadow:inset 0 0 0 1px #cfcfcf"></div>
+ <div class="p" style="left:112px;height:150px;background:linear-gradient(90deg,#2b2b2b,#4a4a4a);transform:rotate(18deg)"></div>
+ <div class="rim"></div><div class="body"></div>
+</div>
+<div class="ph"><span class="spk"></span><span class="cam2"></span><div class="scr2"><img src="sc-ph.png"></div><span class="home"></span></div>
+</body></html>
