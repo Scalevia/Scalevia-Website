@@ -7,7 +7,8 @@ import { WhatsAppIcon } from "./ui/WhatsAppIcon";
 import { SocialIcon } from "./ui/SocialIcon";
 
 export function Footer({ t, locale }: { t: Dictionary; locale: Locale }) {
-  const socials = Object.entries(site.socials).filter(([, url]) => url);
+  // GitHub stays in the structured data (layout.tsx) but is not shown in the footer
+  const socials = Object.entries(site.socials).filter(([name, url]) => url && name !== "github");
   const socialNames: Record<string, string> = { github: "GitHub", linkedin: "LinkedIn", instagram: "Instagram", facebook: "Facebook", x: "X" };
   return (
     <footer className="relative border-t border-line">

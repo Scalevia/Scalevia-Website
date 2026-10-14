@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { CircleCheck, Loader2, Send } from "lucide-react";
 import type { Dictionary } from "@/i18n/dictionaries";
+import { getSolution } from "@/content/solutions";
 
 type Status = "idle" | "sending" | "success" | "error" | "invalid";
 
@@ -15,12 +16,20 @@ export function ContactForm({ t }: { t: Dictionary }) {
   const [status, setStatus] = useState<Status>("idle");
   const [startedAt] = useState(() => Date.now());
   const [message, setMessage] = useState("");
+  const [service, setService] = useState("");
 
-  // A pricing button links here with ?plan=<name>; start the message with it
+  // A pricing button links here with ?plan=<name> and a solution page with ?solution=<slug>;
+  // start the message with it (and pick the matching service)
   useEffect(() => {
-    const plan = new URLSearchParams(window.location.search).get("plan");
+    const query = new URLSearchParams(window.location.search);
+    const plan = query.get("plan");
+    const solution = getSolution(query.get("solution") ?? "");
     if (plan) setMessage(c.form.planPrefill.replace("{plan}", plan.slice(0, 40)));
-  }, [c.form.planPrefill]);
+    if (solution) {
+      setMessage(c.form.solutionPrefill.replace("{solution}", solution.name));
+      setService(c.form.services.find((s) => s.includes(`(${solution.short})`)) ?? "");
+    }
+  }, [c.form]);
 
   async function onSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
@@ -41,6 +50,7 @@ export function ContactForm({ t }: { t: Dictionary }) {
       setStatus("success");
       form.reset();
       setMessage("");
+      setService("");
     } catch {
       setStatus("error");
     }
@@ -78,7 +88,7 @@ export function ContactForm({ t }: { t: Dictionary }) {
               <input name="company" autoComplete="organization" className={field} />
             </Field>
             <Field label={c.form.service} full>
-              <select name="service" defaultValue="" className={field}>
+              <select name="service" value={service} onChange={(e) => setService(e.target.value)} className={field}>
                 <option value="" disabled>
                   {c.form.servicePlaceholder}
                 </option>

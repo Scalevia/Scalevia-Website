@@ -2,15 +2,19 @@
 
 import { useEffect, useState } from "react";
 import { motion, useReducedMotion } from "framer-motion";
-import { ArrowRight, Factory, Stethoscope, Store, UtensilsCrossed, type LucideIcon } from "lucide-react";
+import Link from "next/link";
+import { ArrowRight, Factory, GraduationCap, Stethoscope, Store, UtensilsCrossed, type LucideIcon } from "lucide-react";
 import type { Dictionary, Locale } from "@/i18n/dictionaries";
+import { getSolution, type SolutionSlug } from "@/content/solutions";
 import { ProductDemo } from "./hero/ProductDemo";
 import { getDemos, type BusinessKey } from "./hero/demoData";
 import { ArrowWord } from "../ui/ArrowWord";
 import { HeroAurora } from "./hero/HeroAurora";
 
-const BUSINESSES: { key: BusinessKey; icon: LucideIcon }[] = [
-  { key: "restaurant", icon: UtensilsCrossed },
+// Same order as the industries section; `solution` links the demo to its ScaleVia Resto / Edu page
+const BUSINESSES: { key: BusinessKey; icon: LucideIcon; solution?: SolutionSlug }[] = [
+  { key: "restaurant", icon: UtensilsCrossed, solution: "resto" },
+  { key: "education", icon: GraduationCap, solution: "edu" },
   { key: "clinic", icon: Stethoscope },
   { key: "retail", icon: Store },
   { key: "factory", icon: Factory },
@@ -24,6 +28,8 @@ export function Hero({ t, locale }: { t: Dictionary; locale: Locale }) {
   const [active, setActive] = useState<BusinessKey>("restaurant");
   const [auto, setAuto] = useState(true);
   const [paused, setPaused] = useState(false);
+  const solutionSlug = BUSINESSES.find((b) => b.key === active)?.solution;
+  const solution = solutionSlug ? getSolution(solutionSlug) : undefined;
 
   // Cycle through businesses until the visitor picks one
   useEffect(() => {
@@ -99,7 +105,7 @@ export function Hero({ t, locale }: { t: Dictionary; locale: Locale }) {
                     setActive(key);
                     setAuto(false);
                   }}
-                  className={`relative isolate inline-flex shrink-0 items-center gap-2 overflow-hidden rounded-full px-3.5 py-2.5 text-[13px] font-semibold transition-colors sm:px-5 sm:text-sm ${
+                  className={`relative isolate inline-flex shrink-0 items-center gap-2 overflow-hidden rounded-full px-2.5 py-2.5 text-[12px] font-semibold transition-colors sm:px-5 sm:text-sm ${
                     on ? "text-white" : "text-muted hover:text-fg"
                   }`}
                 >
@@ -130,7 +136,20 @@ export function Hero({ t, locale }: { t: Dictionary; locale: Locale }) {
           <div className="mt-8 sm:mt-10" onPointerEnter={() => setPaused(true)} onPointerLeave={() => setPaused(false)}>
             <ProductDemo demos={demos} active={active} />
           </div>
-          <p className="mt-4 pb-4 text-center text-xs text-muted">{demos.caption}</p>
+          <p className="mt-4 text-center text-xs text-muted">{demos.caption}</p>
+          {/* Fixed height so switching between businesses with and without a solution page doesn't shift the page */}
+          <div className="flex h-12 items-center justify-center pb-2">
+            {solution && (
+              <Link
+                href={`/${locale}/${solution.slug}`}
+                className="group inline-flex items-center gap-1.5 text-sm font-semibold"
+                style={{ color: solution.accent }}
+              >
+                {t.solutions.explore.replace("{name}", solution.name)}
+                <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1 rtl:-scale-x-100 rtl:group-hover:-translate-x-1" />
+              </Link>
+            )}
+          </div>
         </motion.div>
       </div>
     </section>

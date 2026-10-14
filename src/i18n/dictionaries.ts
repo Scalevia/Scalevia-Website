@@ -28,6 +28,7 @@ const en = {
   nav: {
     links: [
       { href: "#services", label: "Services" },
+      { href: "#solutions", label: "Solutions" },
       { href: "#work", label: "Work" },
       { href: "#pricing", label: "Pricing" },
       { href: "#faq", label: "FAQ" },
@@ -45,6 +46,42 @@ const en = {
   },
   clients: {
     title: "Trusted by",
+  },
+  solutions: {
+    eyebrow: "Industries",
+    title: "Systems shaped around your industry",
+    subtitle: "Every industry runs differently. Restaurants and education have complete solutions under their own names, and every system is built from scratch for its client.",
+    alsoLabel: "We also build for",
+    industries: [
+      {
+        icon: "stethoscope",
+        title: "Clinics & Healthcare",
+        desc: "Online booking, patient records and reminders that cut no-shows and paperwork.",
+      },
+      {
+        icon: "store",
+        title: "Retail & Trading",
+        desc: "Online stores, wholesale management and real-time stock across every channel.",
+      },
+      {
+        icon: "factory",
+        title: "Factories & Manufacturing",
+        desc: "Production tracking, raw materials and orders — visible in one dashboard.",
+      },
+    ],
+    explore: "Explore {name}",
+    back: "All industries",
+    whyTitle: "Why build it with us",
+    stepsTitle: "How we work",
+    steps: [
+      { title: "Free consultation", desc: "We learn how you work and what you need." },
+      { title: "Design", desc: "We design the screens and you approve them before we build." },
+      { title: "Build with weekly demos", desc: "You see what's done every week and give feedback early." },
+      { title: "Launch & support", desc: "We launch, train your team and stay with you after launch." },
+    ],
+    workTitle: "From our work in this industry",
+    workCta: "See the project",
+    alsoTitle: "Also from ScaleVia",
   },
   services: {
     eyebrow: "What we build",
@@ -80,32 +117,6 @@ const en = {
         icon: "sparkles",
         title: "Custom Solutions",
         desc: "Have something unique in mind? We scope, design and engineer it around your exact needs.",
-      },
-    ],
-  },
-  industries: {
-    eyebrow: "Industries",
-    title: "Built for the businesses that keep the economy running",
-    items: [
-      {
-        icon: "utensils",
-        title: "Restaurants & Cafés",
-        desc: "Ordering, POS, kitchen display, inventory and delivery — connected in one system.",
-      },
-      {
-        icon: "stethoscope",
-        title: "Clinics & Healthcare",
-        desc: "Online booking, patient records and reminders that cut no-shows and paperwork.",
-      },
-      {
-        icon: "store",
-        title: "Retail & Trading",
-        desc: "Online stores, wholesale management and real-time stock across every channel.",
-      },
-      {
-        icon: "factory",
-        title: "Factories & Manufacturing",
-        desc: "Production tracking, raw materials and orders — visible in one dashboard.",
       },
     ],
   },
@@ -272,6 +283,8 @@ const en = {
         "ERP / Business system",
         "Shopify store",
         "WordPress / WooCommerce",
+        "Restaurant system (Resto)",
+        "E-learning platform (Edu)",
         "Something else",
       ],
       message: "Tell us about your project",
@@ -281,6 +294,7 @@ const en = {
       error: "Something went wrong. Please try again or reach us on WhatsApp.",
       required: "Please fill in your name, email and phone.",
       planPrefill: "I'm interested in the {plan} package.",
+      solutionPrefill: "I'm interested in {solution}.",
     },
   },
   footer: {
@@ -314,6 +328,7 @@ const ar: Dictionary = {
   nav: {
     links: [
       { href: "#services", label: "خدماتنا" },
+      { href: "#solutions", label: "حلولنا" },
       { href: "#work", label: "أعمالنا" },
       { href: "#pricing", label: "الأسعار" },
       { href: "#faq", label: "الأسئلة الشائعة" },
@@ -331,6 +346,42 @@ const ar: Dictionary = {
   },
   clients: {
     title: "عملاء وثقوا بنا",
+  },
+  solutions: {
+    eyebrow: "القطاعات",
+    title: "أنظمة مصممة على مقاس قطاعك",
+    subtitle: "لكل قطاع طريقة عمل مختلفة. للمطاعم والتعليم حلول متكاملة باسمها، وكل نظام نبنيه من الصفر لعميله.",
+    alsoLabel: "ونخدم أيضًا",
+    industries: [
+      {
+        icon: "stethoscope",
+        title: "العيادات والرعاية الصحية",
+        desc: "حجز أونلاين وملفات مرضى وتذكيرات تقلل المواعيد الضائعة والأوراق.",
+      },
+      {
+        icon: "store",
+        title: "التجارة والتجزئة",
+        desc: "متاجر إلكترونية وإدارة جملة ومخزون لحظي عبر كل قنوات البيع.",
+      },
+      {
+        icon: "factory",
+        title: "المصانع والتصنيع",
+        desc: "متابعة الإنتاج والخامات والطلبات في لوحة تحكم واحدة.",
+      },
+    ],
+    explore: "اكتشف {name}",
+    back: "كل القطاعات",
+    whyTitle: "لماذا تبنيه معنا",
+    stepsTitle: "كيف نعمل",
+    steps: [
+      { title: "استشارة مجانية", desc: "نفهم طريقة عملك وما تحتاجه بالضبط." },
+      { title: "التصميم", desc: "نصمم الشاشات وتوافق عليها قبل أن نبدأ البرمجة." },
+      { title: "تنفيذ بعرض أسبوعي", desc: "ترى ما أنجزناه كل أسبوع وتعطينا ملاحظاتك أولًا بأول." },
+      { title: "الإطلاق والدعم", desc: "نطلق النظام وندرّب فريقك ونبقى معك بعد التشغيل." },
+    ],
+    workTitle: "من شغلنا في هذا القطاع",
+    workCta: "شاهد المشروع",
+    alsoTitle: "اكتشف أيضًا",
   },
   services: {
     eyebrow: "ماذا نبني",
@@ -366,32 +417,6 @@ const ar: Dictionary = {
         icon: "sparkles",
         title: "حلول مخصصة",
         desc: "لديك فكرة مختلفة؟ نحللها ونصممها ونبنيها حسب احتياجك بالضبط.",
-      },
-    ],
-  },
-  industries: {
-    eyebrow: "القطاعات",
-    title: "مصممة للشركات التي تحرّك السوق",
-    items: [
-      {
-        icon: "utensils",
-        title: "المطاعم والكافيهات",
-        desc: "الطلبات ونقاط البيع وشاشة المطبخ والمخزون والتوصيل في نظام واحد مترابط.",
-      },
-      {
-        icon: "stethoscope",
-        title: "العيادات والرعاية الصحية",
-        desc: "حجز أونلاين وملفات مرضى وتذكيرات تقلل المواعيد الضائعة والأوراق.",
-      },
-      {
-        icon: "store",
-        title: "التجارة والتجزئة",
-        desc: "متاجر إلكترونية وإدارة جملة ومخزون لحظي عبر كل قنوات البيع.",
-      },
-      {
-        icon: "factory",
-        title: "المصانع والتصنيع",
-        desc: "متابعة الإنتاج والخامات والطلبات في لوحة تحكم واحدة.",
       },
     ],
   },
@@ -558,6 +583,8 @@ const ar: Dictionary = {
         "نظام ERP / إدارة أعمال",
         "متجر Shopify",
         "WordPress / WooCommerce",
+        "نظام مطعم (Resto)",
+        "منصة تعليمية (Edu)",
         "شيء آخر",
       ],
       message: "أخبرنا عن مشروعك",
@@ -567,6 +594,7 @@ const ar: Dictionary = {
       error: "حدث خطأ. حاول مرة أخرى أو تواصل معنا عبر واتساب.",
       required: "من فضلك أدخل الاسم والبريد الإلكتروني ورقم الهاتف.",
       planPrefill: "أنا مهتم بباقة {plan}.",
+      solutionPrefill: "أنا مهتم بـ {solution}.",
     },
   },
   footer: {

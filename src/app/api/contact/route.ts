@@ -48,8 +48,15 @@ export async function POST(request: Request) {
       }),
       redirect: "follow",
     });
-    const result = (await res.json().catch(() => null)) as { ok?: boolean } | null;
-    if (!res.ok || !result?.ok) throw new Error(`Apps Script responded ${res.status}`);
+    const text = await res.text();
+    let result: { ok?: boolean; error?: string } | null = null;
+    try {
+      result = JSON.parse(text);
+    } catch {}
+    // HTML instead of JSON usually means the deployment's access isn't set to "Anyone".
+    if (!res.ok || !result?.ok) {
+      throw new Error(`Apps Script responded ${res.status}: ${result?.error ?? text.slice(0, 200)}`);
+    }
     return NextResponse.json({ ok: true });
   } catch (error) {
     console.error("[contact] forward failed", error);

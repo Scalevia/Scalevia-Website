@@ -3,8 +3,8 @@ import { getDictionary, isLocale } from "@/i18n/dictionaries";
 import { Navbar } from "@/components/Navbar";
 import { Hero } from "@/components/sections/Hero";
 import { Services } from "@/components/sections/Services";
+import { Solutions } from "@/components/sections/Solutions";
 import { ClientLogos } from "@/components/sections/ClientLogos";
-import { Industries } from "@/components/sections/Industries";
 import { Transform } from "@/components/sections/Transform";
 import { Work } from "@/components/sections/Work";
 import { TechStack } from "@/components/sections/TechStack";
@@ -30,7 +30,7 @@ export default async function Home({ params }: { params: Promise<{ locale: strin
         <ClientLogos t={t} locale={locale} />
         <Services t={t} />
         <TechStack t={t} />
-        <Industries t={t} />
+        <Solutions t={t} locale={locale} />
         <Transform t={t} />
         <Work t={t} locale={locale} />
         <Pricing t={t} locale={locale} />

@@ -2,7 +2,7 @@ import type { Locale } from "@/i18n/dictionaries";
 
 // Fictional sample data for the hero product demos.
 
-export type BusinessKey = "restaurant" | "clinic" | "retail" | "factory";
+export type BusinessKey = "restaurant" | "education" | "clinic" | "retail" | "factory";
 
 export type Kpi = { label: string; value: number; decimals?: number; suffix?: string };
 
@@ -16,6 +16,14 @@ export type DemoCommon = {
 
 export type RestaurantDemo = DemoCommon & {
   columns: { title: string; tone: "new" | "prep" | "ready"; orders: { id: string; where: string; items: string; time: string }[] }[];
+};
+export type EducationDemo = DemoCommon & {
+  heading: string;
+  courses: { title: string; teacher: string; students: number; progress: number }[];
+  studentsLabel: string;
+  sessionsTitle: string;
+  sessions: { time: string; title: string; live?: boolean }[];
+  liveLabel: string;
 };
 export type ClinicDemo = DemoCommon & {
   heading: string;
@@ -45,6 +53,7 @@ export type Demos = {
   live: string;
   search: string;
   restaurant: RestaurantDemo;
+  education: EducationDemo;
   clinic: ClinicDemo;
   retail: RetailDemo;
   factory: FactoryDemo;
@@ -91,6 +100,32 @@ const ar: Demos = {
       },
     ],
     toast: { title: "طلب جديد #1052", body: "طاولة 7 · 3 أصناف" },
+  },
+  education: {
+    label: "تعليم",
+    app: "المنصة التعليمية",
+    nav: ["الكورسات", "الطلاب", "الامتحانات", "الاشتراكات", "التقارير"],
+    kpis: [
+      { label: "طلاب نشطون", value: 1240 },
+      { label: "نسبة الإكمال", value: 78, suffix: "%" },
+      { label: "اشتراكات الشهر", value: 86500, suffix: " ج.م" },
+    ],
+    heading: "الكورسات",
+    courses: [
+      { title: "رياضيات — الصف الثالث الثانوي", teacher: "أ. خالد", students: 412, progress: 74 },
+      { title: "فيزياء — الصف الثاني الثانوي", teacher: "أ. نهى", students: 286, progress: 61 },
+      { title: "لغة إنجليزية — المرحلة الإعدادية", teacher: "أ. سلمى", students: 358, progress: 88 },
+      { title: "برمجة للأطفال — Scratch", teacher: "أ. عمر", students: 184, progress: 45 },
+    ],
+    studentsLabel: "طالب",
+    sessionsTitle: "الحصص القادمة",
+    sessions: [
+      { time: "الآن", title: "مراجعة التفاضل", live: true },
+      { time: "5:00 م", title: "كهربية — حل مسائل" },
+      { time: "7:30 م", title: "Grammar — Tenses" },
+    ],
+    liveLabel: "مباشر",
+    toast: { title: "اشتراك جديد", body: "رياضيات — الصف الثالث الثانوي" },
   },
   clinic: {
     label: "عيادة",
@@ -207,6 +242,32 @@ const en: Demos = {
       },
     ],
     toast: { title: "New order #1052", body: "Table 7 · 3 items" },
+  },
+  education: {
+    label: "Education",
+    app: "Learning Platform",
+    nav: ["Courses", "Students", "Exams", "Subscriptions", "Reports"],
+    kpis: [
+      { label: "Students", value: 1240 },
+      { label: "Completion", value: 78, suffix: "%" },
+      { label: "Revenue", value: 86500, suffix: " EGP" },
+    ],
+    heading: "Courses",
+    courses: [
+      { title: "Math — Grade 12", teacher: "Mr. Khaled", students: 412, progress: 74 },
+      { title: "Physics — Grade 11", teacher: "Ms. Noha", students: 286, progress: 61 },
+      { title: "English — Middle school", teacher: "Ms. Salma", students: 358, progress: 88 },
+      { title: "Coding for kids — Scratch", teacher: "Mr. Omar", students: 184, progress: 45 },
+    ],
+    studentsLabel: "students",
+    sessionsTitle: "Upcoming sessions",
+    sessions: [
+      { time: "Now", title: "Calculus review", live: true },
+      { time: "5:00 PM", title: "Electricity — problem solving" },
+      { time: "7:30 PM", title: "Grammar — Tenses" },
+    ],
+    liveLabel: "Live",
+    toast: { title: "New subscription", body: "Math — Grade 12" },
   },
   clinic: {
     label: "Clinic",

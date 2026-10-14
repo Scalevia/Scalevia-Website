@@ -1,5 +1,15 @@
 import {
   BadgeDollarSign,
+  Bike,
+  Building2,
+  CirclePlay,
+  ClipboardCheck,
+  CreditCard,
+  Package,
+  Presentation,
+  QrCode,
+  ReceiptText,
+  Users,
   Factory,
   Globe,
   Headset,
@@ -31,6 +41,19 @@ const icons: Record<string, LucideIcon> = {
   "shield-check": ShieldCheck,
   "badge-dollar": BadgeDollarSign,
   headset: Headset,
+  // Solution features (ScaleVia Resto / Edu)
+  qr: QrCode,
+  order: ShoppingBag,
+  pos: ReceiptText,
+  delivery: Bike,
+  inventory: Package,
+  branches: Building2,
+  video: CirclePlay,
+  exam: ClipboardCheck,
+  payment: CreditCard,
+  app: Smartphone,
+  teacher: Presentation,
+  parent: Users,
 };
 
 export function Icon({ name, className }: { name: string; className?: string }) {

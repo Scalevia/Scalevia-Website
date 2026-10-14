@@ -4,6 +4,7 @@
  * Setup (one time):
  * 1. Create a Google Sheet (e.g. "ScaleVia Leads").
  * 2. Extensions → Apps Script, paste this whole file, then edit the two constants below.
+ *    Pick "authorize" in the function menu, press Run and allow access (Sheets + email).
  * 3. Deploy → New deployment → type "Web app"
  *      Execute as: Me
  *      Who has access: Anyone
@@ -17,6 +18,12 @@ const SECRET = "change-me-to-a-long-random-string";
 const NOTIFY_EMAIL = "tech@scalevia.net";
 
 const HEADERS = ["Date", "Name", "Email", "Phone", "Company", "Service", "Message", "Language"];
+
+// Run once from the editor so Google asks for the Sheets and email permissions.
+function authorize() {
+  SpreadsheetApp.getActiveSpreadsheet().getName();
+  MailApp.getRemainingDailyQuota();
+}
 
 function doPost(e) {
   try {

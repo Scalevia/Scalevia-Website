@@ -8,6 +8,7 @@ import {
   Bell,
   Boxes,
   CalendarDays,
+  CirclePlay,
   ClipboardList,
   LayoutGrid,
   Search,
@@ -20,6 +21,7 @@ import type {
   ClinicDemo,
   DemoCommon,
   Demos,
+  EducationDemo,
   FactoryDemo,
   RestaurantDemo,
   RetailDemo,
@@ -124,6 +126,7 @@ export function ProductDemo({ demos, active }: { demos: Demos; active: BusinessK
               <Kpis kpis={d.kpis} />
               <div className="min-h-0 flex-1">
                 {active === "restaurant" && <Restaurant d={demos.restaurant} />}
+                {active === "education" && <Education d={demos.education} />}
                 {active === "clinic" && <Clinic d={demos.clinic} />}
                 {active === "retail" && <Retail d={demos.retail} />}
                 {active === "factory" && <Factory d={demos.factory} />}
@@ -204,6 +207,58 @@ function Restaurant({ d }: { d: RestaurantDemo }) {
           ))}
         </motion.div>
       ))}
+    </div>
+  );
+}
+
+function Education({ d }: { d: EducationDemo }) {
+  return (
+    <div className="grid h-full gap-3 lg:grid-cols-[1.6fr_1fr]">
+      <motion.div variants={item} className="rounded-xl border border-line">
+        <div className="border-b border-line px-4 py-2.5 text-sm font-semibold">{d.heading}</div>
+        {d.courses.map((c) => (
+          <motion.div key={c.title} variants={item} className="border-b border-line px-4 py-3 last:border-0">
+            <div className="flex items-center gap-2 text-[13px]">
+              <span className="truncate font-semibold">{c.title}</span>
+              <span className="ms-auto shrink-0 text-xs font-bold tabular-nums">{c.progress}%</span>
+            </div>
+            <div className="mt-2 h-2 overflow-hidden rounded-full bg-fg/8">
+              <motion.div
+                className="h-full rounded-full bg-brand-gradient"
+                initial={{ width: 0 }}
+                animate={{ width: `${c.progress}%` }}
+                transition={{ duration: 1.1, delay: 0.3, ease }}
+              />
+            </div>
+            <p className="mt-1.5 text-[11px] text-muted">
+              {c.teacher} · <span className="tabular-nums">{c.students}</span> {d.studentsLabel}
+            </p>
+          </motion.div>
+        ))}
+      </motion.div>
+      <motion.div variants={item} className="hidden flex-col rounded-xl border border-line p-4 lg:flex">
+        <p className="text-xs font-semibold">{d.sessionsTitle}</p>
+        <ul className="mt-3 space-y-2">
+          {d.sessions.map((s) => (
+            <li
+              key={s.title}
+              className={`flex items-center gap-2.5 rounded-lg p-2.5 ${s.live ? "bg-[#3d6fd6]/10" : "bg-surface-2/70"}`}
+            >
+              <CirclePlay className={`h-4 w-4 shrink-0 ${s.live ? "text-accent" : "text-muted"}`} strokeWidth={1.8} />
+              <span className="min-w-0 flex-1">
+                <span className="block truncate text-[12px] font-semibold">{s.title}</span>
+                <span className="block text-[11px] text-muted">{s.time}</span>
+              </span>
+              {s.live && (
+                <span className="flex shrink-0 items-center gap-1 rounded-full bg-red-500/12 px-2 py-0.5 text-[10px] font-semibold text-red-600 dark:text-red-400">
+                  <span className="h-1.5 w-1.5 animate-pulse rounded-full bg-red-500" />
+                  {d.liveLabel}
+                </span>
+              )}
+            </li>
+          ))}
+        </ul>
+      </motion.div>
     </div>
   );
 }

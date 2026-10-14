@@ -219,6 +219,17 @@ export const projects: Project[] = [
       "/projects/manar/mobile-reports.webp",
     ],
   },
+  {
+    category: "restaurant",
+    name: { ar: "نظام مطعم Ming", en: "Ming restaurant system" },
+    summary: {
+      ar: "نبني حاليًا نظامًا مخصصًا لمطعم Ming من الصفر على طريقة عمله، وسنعرض تفاصيله وصوره عند الإطلاق.",
+      en: "We're currently building a custom system for Ming restaurant from scratch around how it works. Details and screenshots will follow at launch.",
+    },
+    status: "progress",
+    tech: [],
+    images: [],
+  },
   // Example — copy, fill in and uncomment:
   // {
   //   category: "shopify",
