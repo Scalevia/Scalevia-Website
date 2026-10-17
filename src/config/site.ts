@@ -4,7 +4,7 @@ export const site = {
   url: "https://scalevia.net",
   email: "tech@scalevia.net",
   // International format, digits only. The first one is used for WhatsApp.
-  phones: ["201283678910", "201210670664", "201090939386"],
+  phones: ["201283678910"],
   whatsapp: "201283678910",
   socials: {
     github: "https://github.com/Scalevia",
