@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { ArrowRight, ArrowUpRight } from "lucide-react";
@@ -127,6 +128,11 @@ function ProjectCard({ project: p, t, locale, mock }: { project: Project; t: Dic
           <div className="w-full min-w-0 flex-1">
             {p.images.length > 0 ? (
               <ShotCarousel images={p.images} alt={p.name[locale]} frame="browser" priority />
+            ) : p.cover ? (
+              // Phone-only projects: the cover stands in for the desktop screenshots
+              <div className="relative aspect-[16/10] w-full overflow-hidden rounded-2xl">
+                <Image src={p.cover} alt={p.name[locale]} fill priority quality={90} sizes="(min-width: 1024px) 760px, 100vw" className="object-cover" />
+              </div>
             ) : (
               <div className="relative aspect-[16/10] w-full">
                 <div className="absolute inset-x-4 top-4 bottom-0">

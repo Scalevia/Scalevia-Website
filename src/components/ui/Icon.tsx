@@ -41,7 +41,7 @@ const icons: Record<string, LucideIcon> = {
   "shield-check": ShieldCheck,
   "badge-dollar": BadgeDollarSign,
   headset: Headset,
-  // Solution features (ScaleVia Resto / Edu)
+  // Solution features (ScaleVia Kitchio / Hessety)
   qr: QrCode,
   order: ShoppingBag,
   pos: ReceiptText,

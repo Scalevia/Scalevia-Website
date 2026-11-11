@@ -9,7 +9,6 @@ import { Transform } from "@/components/sections/Transform";
 import { Work } from "@/components/sections/Work";
 import { TechStack } from "@/components/sections/TechStack";
 import { Pricing } from "@/components/sections/Pricing";
-import { Testimonials } from "@/components/sections/Testimonials";
 import { Faq } from "@/components/sections/Faq";
 import { Contact } from "@/components/sections/Contact";
 import { Footer } from "@/components/Footer";
@@ -34,7 +33,7 @@ export default async function Home({ params }: { params: Promise<{ locale: strin
         <Transform t={t} />
         <Work t={t} locale={locale} />
         <Pricing t={t} locale={locale} />
-        <Testimonials t={t} />
+        {/* Testimonials are hidden until we have real ones: <Testimonials t={t} /> */}
         <Faq t={t} locale={locale} />
         <Contact t={t} locale={locale} />
       </main>

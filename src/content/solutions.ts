@@ -6,7 +6,7 @@ import type { CategorySlug } from "./projects";
 
 type Text = Record<Locale, string>;
 
-export type SolutionSlug = "resto" | "edu";
+export type SolutionSlug = "kitchio" | "hessety";
 
 export type Solution = {
   slug: SolutionSlug;
@@ -27,11 +27,11 @@ export type Solution = {
 
 export const solutions: Solution[] = [
   {
-    slug: "resto",
-    name: "ScaleVia Resto",
-    short: "Resto",
+    slug: "kitchio",
+    name: "ScaleVia Kitchio",
+    short: "Kitchio",
     accent: "#ea7a2b",
-    photo: "/solutions/resto.webp",
+    photo: "/solutions/kitchio.webp",
     category: "restaurant",
     tagline: {
       ar: "نظام مطعمك، مبني من الصفر على طريقة شغلك.",
@@ -42,8 +42,8 @@ export const solutions: Solution[] = [
       en: "One system that runs your restaurant, from order to delivery",
     },
     intro: {
-      ar: "مع ScaleVia Resto نبني لمطعمك نظامًا خاصًا به من الصفر: منيو QR وطلب أونلاين وكاشير وتوصيل ومخزون وإدارة للفروع، مصممًا على طريقة عملك وليس قالبًا جاهزًا.",
-      en: "With ScaleVia Resto we build your restaurant its own system from scratch: QR menu, online ordering, POS, delivery, inventory and multi-branch management, designed around how you work rather than a ready-made template.",
+      ar: "مع ScaleVia Kitchio نبني لمطعمك نظامًا خاصًا به من الصفر: منيو QR وطلب أونلاين وكاشير وتوصيل ومخزون وإدارة للفروع، مصممًا على طريقة عملك وليس قالبًا جاهزًا.",
+      en: "With ScaleVia Kitchio we build your restaurant its own system from scratch: QR menu, online ordering, POS, delivery, inventory and multi-branch management, designed around how you work rather than a ready-made template.",
     },
     featuresTitle: { ar: "كل ما يحتاجه مطعمك في مكان واحد", en: "Everything your restaurant needs, in one place" },
     features: [
@@ -126,11 +126,11 @@ export const solutions: Solution[] = [
     },
   },
   {
-    slug: "edu",
-    name: "ScaleVia Edu",
-    short: "Edu",
+    slug: "hessety",
+    name: "ScaleVia Hessety",
+    short: "Hessety",
     accent: "#13a37c",
-    photo: "/solutions/edu-teacher.webp",
+    photo: "/solutions/hessety.webp",
     category: "education",
     tagline: {
       ar: "منصة تعليمية باسمك، مبنية من الصفر لطلابك.",
@@ -141,8 +141,8 @@ export const solutions: Solution[] = [
       en: "Your e-learning platform, under your name and your way",
     },
     intro: {
-      ar: "مع ScaleVia Edu نبني للمدارس والمراكز التعليمية والمدرسين منصة تعليم أونلاين خاصة بهم من الصفر: كورسات فيديو وامتحانات ودفع أونلاين وتطبيق موبايل ولوحات متابعة للمدرس وولي الأمر.",
-      en: "With ScaleVia Edu we build schools, learning centers and teachers their own online learning platform from scratch: video courses, exams, online payments, a mobile app and dashboards for teachers and parents.",
+      ar: "مع ScaleVia Hessety نبني للمدارس والمراكز التعليمية والمدرسين منصة تعليم أونلاين خاصة بهم من الصفر: كورسات فيديو وامتحانات ولوحات متابعة للمدرس وولي الأمر.",
+      en: "With ScaleVia Hessety we build schools, learning centers and teachers their own online learning platform from scratch: video courses, exams and dashboards for teachers and parents.",
     },
     featuresTitle: { ar: "كل ما تحتاجه منصتك التعليمية", en: "Everything your learning platform needs" },
     features: [
@@ -160,22 +160,6 @@ export const solutions: Solution[] = [
         desc: {
           ar: "امتحانات وواجبات بتصحيح تلقائي للأسئلة الاختيارية ونتائج فورية.",
           en: "Exams and assignments with automatic grading for multiple-choice questions and instant results.",
-        },
-      },
-      {
-        icon: "payment",
-        title: { ar: "دفع أونلاين", en: "Online payments" },
-        desc: {
-          ar: "يشترك الطالب ويدفع من المنصة مباشرة.",
-          en: "Students subscribe and pay right on the platform.",
-        },
-      },
-      {
-        icon: "app",
-        title: { ar: "تطبيق موبايل", en: "Mobile app" },
-        desc: {
-          ar: "تطبيق iOS وAndroid باسم منصتك.",
-          en: "An iOS and Android app under your platform's name.",
         },
       },
       {
@@ -199,8 +183,8 @@ export const solutions: Solution[] = [
       {
         title: { ar: "باسمك وهويتك", en: "Your name, your brand" },
         desc: {
-          ar: "منصة وتطبيق بهوية مدرستك أو مركزك، وليس حسابًا على منصة شخص آخر.",
-          en: "A platform and app in your school's or center's identity, not an account on someone else's platform.",
+          ar: "منصة بهوية مدرستك أو مركزك، وليس حسابًا على منصة شخص آخر.",
+          en: "A platform in your school's or center's identity, not an account on someone else's platform.",
         },
       },
       {

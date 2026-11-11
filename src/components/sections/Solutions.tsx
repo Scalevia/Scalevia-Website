@@ -3,6 +3,7 @@ import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import type { Dictionary, Locale } from "@/i18n/dictionaries";
 import { solutions, type Solution } from "@/content/solutions";
+import { formatEGP, startingPrice } from "@/content/plans";
 import { Icon } from "../ui/Icon";
 import { Reveal } from "../ui/Reveal";
 import { SectionHeading } from "../ui/SectionHeading";
@@ -14,7 +15,7 @@ const PHOTOS: Record<string, string> = {
   factory: "/industries/factory-hd.webp",
 };
 
-// Industries section: the branded solutions (ScaleVia Resto, ScaleVia Edu) as large cards
+// Industries section: the branded solutions (ScaleVia Kitchio, ScaleVia Hessety) as large cards
 // linking to their own pages, then the other industries we build for in a smaller row.
 export function Solutions({ t, locale }: { t: Dictionary; locale: Locale }) {
   return (
@@ -74,6 +75,7 @@ export function SolutionName({ s, className = "" }: { s: Solution; className?: s
 }
 
 export function SolutionCard({ s, t, locale }: { s: Solution; t: Dictionary; locale: Locale }) {
+  const from = startingPrice(s.slug);
   return (
     <Link
       href={`/${locale}/${s.slug}`}
@@ -94,6 +96,9 @@ export function SolutionCard({ s, t, locale }: { s: Solution; t: Dictionary; loc
           <SolutionName s={s} />
         </h3>
         <p className="mt-2 text-muted text-pretty">{s.tagline[locale]}</p>
+        {from !== undefined && (
+          <p className="mt-3 text-sm font-semibold tabular-nums">{t.pricing.startsFrom.replace("{price}", formatEGP(from, locale))}</p>
+        )}
         <ul className="mt-6 flex flex-wrap gap-2">
           {s.features.map((f) => (
             <li

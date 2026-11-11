@@ -162,9 +162,15 @@ const en = {
   pricing: {
     eyebrow: "Pricing",
     title: "A package for every stage of your business",
-    subtitle: "Three e-commerce packages, from your first online store to a fully custom brand experience. Anything else gets a custom quote.",
+    subtitle: "Clear prices for our industry systems, plus packages for online stores. Anything else gets a custom quote.",
+    systemsTitle: "Industry systems",
+    storesTitle: "Shopify & WordPress stores",
+    buildCost: "Build cost",
+    monthly: "+ {price} / month for hosting & maintenance",
+    or: "Or",
+    details: "Details",
+    startsFrom: "From {price}",
     from: "Starting from",
-    soon: "Price coming soon",
     popular: "Most popular",
     showAll: "Show all features (+{n})",
     showLess: "Show less",
@@ -172,6 +178,7 @@ const en = {
     plans: [
       {
         name: "Starter",
+        price: 15000,
         desc: "For businesses starting their journey that want to present their products professionally.",
         includes: "",
         features: [
@@ -186,6 +193,7 @@ const en = {
       },
       {
         name: "Operational Pro",
+        price: 20000,
         desc: "Our most requested package, for businesses aiming for real sales performance and full market coverage.",
         includes: "Everything in Starter, plus:",
         features: [
@@ -198,6 +206,7 @@ const en = {
       },
       {
         name: "Signature UX/UI",
+        price: 23000,
         desc: "For brands that want a distinctive identity and an exceptional experience that puts them ahead of competitors.",
         includes: "Everything in Operational Pro, plus:",
         features: [
@@ -283,8 +292,8 @@ const en = {
         "ERP / Business system",
         "Shopify store",
         "WordPress / WooCommerce",
-        "Restaurant system (Resto)",
-        "E-learning platform (Edu)",
+        "Restaurant system (Kitchio)",
+        "E-learning platform (Hessety)",
         "Something else",
       ],
       message: "Tell us about your project",
@@ -462,9 +471,15 @@ const ar: Dictionary = {
   pricing: {
     eyebrow: "الأسعار",
     title: "باقة لكل مرحلة من مشروعك",
-    subtitle: "ثلاث باقات للمتاجر الإلكترونية، من أول متجر لك حتى تجربة براند مصممة بالكامل. وأي مشروع آخر له عرض سعر مخصص.",
+    subtitle: "أسعار واضحة لأنظمة القطاعات، وباقات للمتاجر الإلكترونية. وأي مشروع آخر له عرض سعر مخصص.",
+    systemsTitle: "أنظمة القطاعات",
+    storesTitle: "متاجر Shopify وWordPress",
+    buildCost: "تكلفة التنفيذ",
+    monthly: "+ {price} شهريًا للاستضافة والصيانة",
+    or: "أو",
+    details: "التفاصيل",
+    startsFrom: "يبدأ من {price}",
     from: "يبدأ من",
-    soon: "السعر قريبًا",
     popular: "الأكثر طلبًا",
     showAll: "عرض كل المميزات (+{n})",
     showLess: "عرض أقل",
@@ -472,6 +487,7 @@ const ar: Dictionary = {
     plans: [
       {
         name: "Starter",
+        price: 15000,
         desc: "للشركات التي تبدأ رحلتها وتريد عرض منتجاتها بشكل احترافي.",
         includes: "",
         features: [
@@ -486,6 +502,7 @@ const ar: Dictionary = {
       },
       {
         name: "Operational Pro",
+        price: 20000,
         desc: "الباقة الأكثر طلبًا، للشركات التي تستهدف أداء مبيعات حقيقي وتغطية كاملة للسوق.",
         includes: "كل مميزات Starter، بالإضافة إلى:",
         features: [
@@ -498,6 +515,7 @@ const ar: Dictionary = {
       },
       {
         name: "Signature UX/UI",
+        price: 23000,
         desc: "للعلامات التجارية التي تبحث عن هوية مميزة وتجربة استثنائية تضعها في مقدمة منافسيها.",
         includes: "كل مميزات Operational Pro، بالإضافة إلى:",
         features: [
@@ -583,8 +601,8 @@ const ar: Dictionary = {
         "نظام ERP / إدارة أعمال",
         "متجر Shopify",
         "WordPress / WooCommerce",
-        "نظام مطعم (Resto)",
-        "منصة تعليمية (Edu)",
+        "نظام مطعم (Kitchio)",
+        "منصة تعليمية (Hessety)",
         "شيء آخر",
       ],
       message: "أخبرنا عن مشروعك",

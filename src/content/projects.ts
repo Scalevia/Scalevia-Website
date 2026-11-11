@@ -221,14 +221,27 @@ export const projects: Project[] = [
   },
   {
     category: "restaurant",
-    name: { ar: "نظام مطعم Ming", en: "Ming restaurant system" },
+    name: { ar: "Ming Burger", en: "Ming Burger" },
     summary: {
-      ar: "نبني حاليًا نظامًا مخصصًا لمطعم Ming من الصفر على طريقة عمله، وسنعرض تفاصيله وصوره عند الإطلاق.",
-      en: "We're currently building a custom system for Ming restaurant from scratch around how it works. Details and screenshots will follow at launch.",
+      ar: "بدأنا مع Ming Burger بالمنيو الإلكتروني لفرع القنطرة شرق: منيو للفطار وآخر للغدا يتغيران حسب الوقت، وأقسام وبحث، وميزة «معاك كام؟» التي تقترح على العميل ما يقدر يطلبه بالمبلغ الذي معه، و«اختارلي» لمن لا يعرف ماذا يطلب. وهذه مجرد البداية، فما زلنا نعمل على نظام المطعم الكامل.",
+      en: "We started with Ming Burger's digital menu for its El Qantara Sharq branch: separate breakfast and lunch menus by time of day, categories and search, a “How much do you have?” feature that suggests what a customer can order for their budget, and “Pick for me” for the undecided. This is only the beginning: we're still building the full restaurant system.",
     },
     status: "progress",
+    link: "https://ming-menu-sharq.vercel.app/?menu=breakfast",
     tech: [],
-    images: [],
+    cover: "/projects/ming/cover-phones.webp",
+    images: [
+      "/projects/ming/lunch.webp",
+      "/projects/ming/burgers.webp",
+      "/projects/ming/budget.webp",
+      "/projects/ming/breakfast.webp",
+    ],
+    mobileImages: [
+      "/projects/ming/mobile-lunch.webp",
+      "/projects/ming/mobile-budget.webp",
+      "/projects/ming/mobile-burgers.webp",
+      "/projects/ming/mobile-breakfast.webp",
+    ],
   },
   // Example — copy, fill in and uncomment:
   // {

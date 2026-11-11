@@ -4,6 +4,7 @@ import { ArrowRight } from "lucide-react";
 import type { Dictionary, Locale } from "@/i18n/dictionaries";
 import { getCategory, projectsIn } from "@/content/projects";
 import { solutions, type Solution } from "@/content/solutions";
+import { plansFor } from "@/content/plans";
 import { whatsappLink } from "@/config/site";
 import { Navbar } from "./Navbar";
 import { Footer } from "./Footer";
@@ -14,12 +15,14 @@ import { MockScreen } from "./ui/MockScreen";
 import { Reveal } from "./ui/Reveal";
 import { WhatsAppIcon } from "./ui/WhatsAppIcon";
 import { SolutionCard, SolutionName } from "./sections/Solutions";
+import { SystemPlanCard } from "./sections/Pricing";
 
-// Landing page for one industry solution, at /[locale]/resto and /[locale]/edu.
+// Landing page for one industry solution, at /[locale]/kitchio and /[locale]/hessety.
 export function SolutionPage({ s, t, locale }: { s: Solution; t: Dictionary; locale: Locale }) {
   const projects = projectsIn(s.category);
   const category = getCategory(s.category);
   const others = solutions.filter((o) => o.slug !== s.slug);
+  const plans = plansFor(s.slug);
   const contactHref = `/${locale}/contact?solution=${s.slug}`;
   const whatsappText = t.contact.form.solutionPrefill.replace("{solution}", s.name);
 
@@ -216,6 +219,26 @@ export function SolutionPage({ s, t, locale }: { s: Solution; t: Dictionary; loc
                   );
                 })}
               </ul>
+            </div>
+          </section>
+        )}
+
+        {/* Pricing */}
+        {plans.length > 0 && (
+          <section id="pricing" className="band scroll-mt-20 py-16 sm:py-24">
+            <div className="mx-auto max-w-6xl px-5 sm:px-8">
+              <Reveal>
+                <p className="text-sm font-semibold" style={{ color: s.accent }}>
+                  {t.pricing.eyebrow}
+                </p>
+              </Reveal>
+              <div className="mt-6 grid gap-4 md:grid-cols-2 lg:grid-cols-3">
+                {plans.map((plan) => (
+                  <Reveal key={plan.id} className="h-full">
+                    <SystemPlanCard plan={plan} t={t} locale={locale} showDetails={false} />
+                  </Reveal>
+                ))}
+              </div>
             </div>
           </section>
         )}

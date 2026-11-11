@@ -5,7 +5,7 @@ import { getSolution } from "@/content/solutions";
 import { SolutionPage, solutionMetadata } from "@/components/SolutionPage";
 
 type Params = Promise<{ locale: string }>;
-const solution = getSolution("edu")!;
+const solution = getSolution("kitchio")!;
 
 export async function generateMetadata({ params }: { params: Params }): Promise<Metadata> {
   const { locale } = await params;

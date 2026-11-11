@@ -11,10 +11,10 @@ import { getDemos, type BusinessKey } from "./hero/demoData";
 import { ArrowWord } from "../ui/ArrowWord";
 import { HeroAurora } from "./hero/HeroAurora";
 
-// Same order as the industries section; `solution` links the demo to its ScaleVia Resto / Edu page
+// Same order as the industries section; `solution` links the demo to its ScaleVia Kitchio / Hessety page
 const BUSINESSES: { key: BusinessKey; icon: LucideIcon; solution?: SolutionSlug }[] = [
-  { key: "restaurant", icon: UtensilsCrossed, solution: "resto" },
-  { key: "education", icon: GraduationCap, solution: "edu" },
+  { key: "restaurant", icon: UtensilsCrossed, solution: "kitchio" },
+  { key: "education", icon: GraduationCap, solution: "hessety" },
   { key: "clinic", icon: Stethoscope },
   { key: "retail", icon: Store },
   { key: "factory", icon: Factory },
