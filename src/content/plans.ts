@@ -28,6 +28,7 @@ export const systemPlans: SystemPlan[] = [
       en: "The complete system for your restaurant: QR menu, online ordering, POS, delivery, inventory and branches.",
     },
     price: 30000,
+    monthly: 2000,
     alt: {
       title: { ar: "منيو QR وموقع فقط", en: "QR menu & website only" },
       price: 3999,
